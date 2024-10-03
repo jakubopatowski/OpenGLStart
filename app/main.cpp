@@ -1,6 +1,6 @@
-#include <iostream>
+#include "hello.hpp"
 
 int main(int argc, const char** argv) {
-    std::cout << "Hello!\n";
+    hello();
     return 0;
 }
