@@ -11,9 +11,10 @@ set(CMAKE_CXX_EXTENSIONS OFF) # additional features of a compiler
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
-include(AddGitSubmodule)
 
+include(AddGitSubmodule)
 add_git_submodule(thirdparty/json)
+
 
 add_subdirectory(cmake_configure)
 add_subdirectory(lib)
