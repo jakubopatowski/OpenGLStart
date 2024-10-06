@@ -1,5 +1,2 @@
 CompileFlags:                   
-  Add: 
-    - "-xc++"
-    - "-Wall"
-    - "-I:./lib"             
+  CompilationDatabase: build/

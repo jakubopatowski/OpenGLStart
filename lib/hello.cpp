@@ -1,7 +1,8 @@
 #include "hello.hpp"
 #include <iostream>
+#include "config.hpp"
 
 void hello(){
-    std::cout <<"Hello!\n";
-    std::cout <<"Jakub Opatowski\n";
+    std::cout <<"Project name: " << CMakeVars::project_name << '\n';
+    std::cout <<"Project version: " << CMakeVars::project_version << '\n';
 }
