@@ -8,5 +8,7 @@ int main(int argc, const char **argv) {
   std::cout << "JSON lib version: " << NLOHMANN_JSON_VERSION_MAJOR << '.'
             << NLOHMANN_JSON_VERSION_MINOR << '.' << NLOHMANN_JSON_VERSION_PATCH
             << '\n';
+
+  initOpenGl();
   return 0;
 }
