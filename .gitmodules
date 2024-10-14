@@ -1,6 +1,0 @@
-[submodule "thirdparty/json"]
-	path = thirdparty/json
-	url = https://github.com/nlohmann/json.git
-[submodule "thirdparty/glew"]
-	path = thirdparty/glew
-	url = https://github.com/nigels-com/glew.git
