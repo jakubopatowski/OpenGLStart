@@ -7,12 +7,11 @@ project(
 
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_EXTENSIONS OFF) # additional features of a compiler
+set(CMAKE_CXX_EXTENSIONS OFF)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 set(CMAKE_MODULE_PATH "${PROJECT_SOURCE_DIR}/cmake")
-
-include(AddGitSubmodule)
+include(GenerateDoxygen)
 include(FetchContent)
 
 FetchContent_Declare(
@@ -30,11 +29,11 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glew)
 
 FetchContent_Declare(
-    GLFW
+    glfw
     GIT_REPOSITORY  https://github.com/glfw/glfw.git
     GIT_TAG         3.4
     GIT_SHALLOW     TRUE)
-FetchContent_MakeAvailable(GLFW)
+FetchContent_MakeAvailable(glfw)
 
 add_subdirectory(cmake_configure)
 add_subdirectory(lib)
