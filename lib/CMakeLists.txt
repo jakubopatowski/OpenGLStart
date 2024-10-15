@@ -1,4 +1,6 @@
-add_library(library STATIC hello.cpp)
+
+
+add_library(library STATIC hello.cpp math.cpp)
 
 target_include_directories( library 
   PUBLIC 
@@ -10,3 +12,5 @@ target_link_libraries( library
     nlohmann_json::nlohmann_json
     libglew_static
     glfw)
+
+add_subdirectory(tests)

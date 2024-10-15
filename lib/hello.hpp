@@ -8,6 +8,5 @@ void hello();
  * @return int 
  */
 int initOpenGl();
-
 void createTriangle();
 void compileShaders();
