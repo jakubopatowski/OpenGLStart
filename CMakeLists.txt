@@ -42,6 +42,8 @@ FetchContent_Declare(
     GIT_SHALLOW     TRUE)
 FetchContent_MakeAvailable(catch2)
 
+option(ENABLE_UNIT_TEST "Enable a unit testing build" OFF)
+
 add_subdirectory(cmake_configure)
 add_subdirectory(lib)
 add_subdirectory(app)
