@@ -35,14 +35,20 @@ FetchContent_Declare(
     GIT_SHALLOW     TRUE)
 FetchContent_MakeAvailable(glfw)
 
-FetchContent_Declare(
-    catch2
-    GIT_REPOSITORY  https://github.com/catchorg/Catch2.git
-    GIT_TAG         v3.7.1
-    GIT_SHALLOW     TRUE)
-FetchContent_MakeAvailable(catch2)
-
 option(ENABLE_UNIT_TEST "Enable a unit testing build" OFF)
+
+if(ENABLE_UNIT_TEST)
+    FetchContent_Declare(
+        catch2
+        GIT_REPOSITORY  https://github.com/catchorg/Catch2.git
+        GIT_TAG         v3.7.1
+        GIT_SHALLOW     TRUE)
+    FetchContent_MakeAvailable(catch2)
+    list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
+
+    include(CTest)
+    enable_testing()
+endif()
 
 add_subdirectory(cmake_configure)
 add_subdirectory(lib)

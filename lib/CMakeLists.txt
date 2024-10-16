@@ -13,4 +13,6 @@ target_link_libraries( library
     libglew_static
     glfw)
 
-add_subdirectory(tests)
+if(ENABLE_UNIT_TEST)
+  add_subdirectory(tests)
+endif()
