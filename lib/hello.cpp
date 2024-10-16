@@ -123,7 +123,7 @@ void AddShader(GLuint theProgram, const char *shaderCode, GLenum shaderType) {
   theCode[0] = shaderCode;
 
   GLint codeLength[1];
-  codeLength[0] = strlen(shaderCode);
+  codeLength[0] = static_cast<GLint>(strlen(shaderCode));
 
   glShaderSource(theShader, 1, theCode, codeLength);
   glCompileShader(theShader);

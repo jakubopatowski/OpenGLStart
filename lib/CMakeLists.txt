@@ -16,3 +16,7 @@ target_link_libraries( library
 if(ENABLE_UNIT_TEST)
   add_subdirectory(tests)
 endif()
+
+if(${ENABLE_WARNINGS})
+  target_set_warnings(library ${ENABLE_WARNINGS} ${ENABLE_WARNINGS_AS_ERRORS})
+endif()

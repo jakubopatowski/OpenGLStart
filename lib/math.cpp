@@ -24,5 +24,6 @@ bool Matematyka::Funkcje::checkSum(const std::vector<int> &numbers,
       }
     }
   }
+  
   return false;
 }

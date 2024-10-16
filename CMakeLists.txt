@@ -36,6 +36,8 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(glfw)
 
 option(ENABLE_UNIT_TEST "Enable a unit testing build" OFF)
+option(ENABLE_WARNINGS "Enable warnings" ON)
+option(ENABLE_WARNINGS_AS_ERRORS "Enable warnings as errors" ON)
 
 if(ENABLE_UNIT_TEST)
     FetchContent_Declare(
@@ -48,6 +50,10 @@ if(ENABLE_UNIT_TEST)
 
     include(CTest)
     enable_testing()
+endif()
+
+if(ENABLE_WARNINGS)
+    include(Warnings)
 endif()
 
 add_subdirectory(cmake_configure)
