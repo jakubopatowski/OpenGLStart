@@ -1,5 +1,3 @@
-
-
 add_library(library STATIC hello.cpp math.cpp)
 
 target_include_directories( library 
