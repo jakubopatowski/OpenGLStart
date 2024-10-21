@@ -4,8 +4,8 @@ void hello();
 
 /**
  * @brief Initialize OpenGL window
- * 
- * @return int 
+ *
+ * @return int
  */
 int initOpenGl();
 void createTriangle();

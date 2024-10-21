@@ -38,6 +38,8 @@ FetchContent_MakeAvailable(glfw)
 option(ENABLE_UNIT_TEST "Enable a unit testing build" OFF)
 option(ENABLE_WARNINGS "Enable warnings" ON)
 option(ENABLE_WARNINGS_AS_ERRORS "Enable warnings as errors" ON)
+option(ENABLE_ADDRESS_SANITIZER "Enable address sanitizer" ON)
+option(ENABLE_UNDEFINED_SANITIZER "Enalbe undefined sanitizer" ON)
 
 if(ENABLE_UNIT_TEST)
     FetchContent_Declare(
@@ -54,6 +56,11 @@ endif()
 
 if(ENABLE_WARNINGS)
     include(Warnings)
+endif()
+
+if(ENABLE_ADDRESS_SANITIZER OR ENABLE_UNDEFINED_SANITIZER)
+    include(Sanitizers)
+    add_sanitizer_flags()
 endif()
 
 add_subdirectory(cmake_configure)
