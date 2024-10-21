@@ -25,3 +25,8 @@ bool Matematyka::Funkcje::checkSum(const std::vector<int>& numbers, int sum) con
 
     return false;
 }
+
+std::vector<int> Matematyka::Funkcje::problem002(const std::vector<int>& /*array*/) const {
+  std::vector<int> result;
+  return result;
+}
