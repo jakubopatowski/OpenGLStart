@@ -18,3 +18,7 @@ endif()
 if(${ENABLE_WARNINGS})
   target_set_warnings(library ${ENABLE_WARNINGS} ${ENABLE_WARNINGS_AS_ERRORS})
 endif()
+
+if(${ENABLE_LTO})
+    target_enable_lto(library)
+endif()

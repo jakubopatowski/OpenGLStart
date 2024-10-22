@@ -35,11 +35,12 @@ FetchContent_Declare(
     GIT_SHALLOW     TRUE)
 FetchContent_MakeAvailable(glfw)
 
-option(ENABLE_UNIT_TEST "Enable a unit testing build" OFF)
+option(ENABLE_UNIT_TEST "Enable a unit testing build" ON)
 option(ENABLE_WARNINGS "Enable warnings" ON)
-option(ENABLE_WARNINGS_AS_ERRORS "Enable warnings as errors" ON)
-option(ENABLE_ADDRESS_SANITIZER "Enable address sanitizer" ON)
-option(ENABLE_UNDEFINED_SANITIZER "Enalbe undefined sanitizer" ON)
+option(ENABLE_WARNINGS_AS_ERRORS "Enable warnings as errors" OFF)
+option(ENABLE_ADDRESS_SANITIZER "Enable address sanitizer" OFF)
+option(ENABLE_UNDEFINED_SANITIZER "Enalbe undefined sanitizer" OFF)
+option(ENABLE_LTO "Enable LTO/IPO optimization" ON)
 
 if(ENABLE_UNIT_TEST)
     FetchContent_Declare(
@@ -61,6 +62,10 @@ endif()
 if(ENABLE_ADDRESS_SANITIZER OR ENABLE_UNDEFINED_SANITIZER)
     include(Sanitizers)
     add_sanitizer_flags()
+endif()
+
+if(ENABLE_LTO)
+    include(LTO)
 endif()
 
 add_subdirectory(cmake_configure)

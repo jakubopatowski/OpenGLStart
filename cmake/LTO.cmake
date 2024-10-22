@@ -1,0 +1,11 @@
+function(target_enable_lto TARGET)
+    include(CheckIPOSupported)
+    check_ipo_supported(RESULT result OUTPUT output)
+
+    if(result)
+        message(STATUS "IPO/LTO is supported!")
+        set_property(TARGET ${TARGET} PROPERTY INTERPROCEDURAL_OPTIMIZATION ON)
+    else()
+        message(STATUS "IPO/LTO is NOT supported!")
+    endif()
+endfunction(target_enable_lto)
